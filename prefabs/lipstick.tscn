@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://cg5cgj2703nug"]
+
+[ext_resource type="Script" path="res://levels/scripts/lipstick.gd" id="1_343mv"]
+[ext_resource type="Texture2D" uid="uid://bs67ivjmj4byu" path="res://assets/New Piskel (3).png" id="1_oemu0"]
+[ext_resource type="Texture2D" uid="uid://bngmeowo4dwk2" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Effects/Yellow_Sparkle (16 x 16).png" id="2_tbd14"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f04bb"]
+atlas = ExtResource("2_tbd14")
+region = Rect2(0, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8758"]
+atlas = ExtResource("2_tbd14")
+region = Rect2(20, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6n2y"]
+atlas = ExtResource("2_tbd14")
+region = Rect2(40, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyf0j"]
+atlas = ExtResource("2_tbd14")
+region = Rect2(60, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smssw"]
+atlas = ExtResource("1_oemu0")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhf70"]
+atlas = ExtResource("1_oemu0")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b20k"]
+atlas = ExtResource("1_oemu0")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38mof"]
+atlas = ExtResource("1_oemu0")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ycxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f04bb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8758")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6n2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyf0j")
+}],
+"loop": false,
+"name": &"collect",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smssw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhf70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b20k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38mof")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tamgp"]
+size = Vector2(16, 24)
+
+[node name="lipstick" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_343mv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, 0)
+sprite_frames = SubResource("SpriteFrames_5ycxn")
+animation = &"collect"
+autoplay = "idle"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(2, 3)
+shape = SubResource("RectangleShape2D_tamgp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

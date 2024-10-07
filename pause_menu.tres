@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://mrv6ctcwphbe"]
+
+[ext_resource type="FontFile" uid="uid://f23ldqm0a0qp" path="res://assets/fonts/RevMiniPixel.ttf" id="1_gq80w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vra28"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hhky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rm1p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_67172"]
+
+[resource]
+Button/colors/font_color = Color(1, 0.87451, 0.87451, 1)
+Button/colors/font_focus_color = Color(1, 1, 0.294118, 1)
+Button/colors/font_hover_color = Color(1, 1, 0.294118, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 0.294118, 1)
+Button/colors/font_pressed_color = Color(1, 0.780392, 0, 1)
+Button/colors/icon_pressed_color = Color(0.363414, 0.0119773, 0.664972, 1)
+Button/fonts/font = ExtResource("1_gq80w")
+Button/styles/focus = SubResource("StyleBoxEmpty_vra28")
+Button/styles/hover = SubResource("StyleBoxEmpty_0hhky")
+Button/styles/normal = SubResource("StyleBoxEmpty_8rm1p")
+Button/styles/pressed = SubResource("StyleBoxEmpty_67172")
