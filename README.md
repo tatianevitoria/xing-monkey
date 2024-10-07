@@ -13,3 +13,6 @@ Xing Monkey é um jogo onde você ajuda a orangotango Xing a escapar do circo on
 
 Divirta-se ajudando Xing a escapar e explorar o mundo!
 
+##GamePlay
+[![Assista ao vídeo de demonstração](https://youtu.be/VwlKJXTxac4)
+
